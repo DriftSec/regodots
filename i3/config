@@ -131,11 +131,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-## Navigate // Relative Window // <> k j h l ##
-set_from_resource $i3-wm.binding.left i3-wm.binding.left h
-set_from_resource $i3-wm.binding.right i3-wm.binding.right l
-set_from_resource $i3-wm.binding.up i3-wm.binding.up k
-set_from_resource $i3-wm.binding.down i3-wm.binding.down j
+## Navigate // Relative Window // <> k j h l ############################################## changed hjkl to jkl;
+set_from_resource $i3-wm.binding.left i3-wm.binding.left j
+set_from_resource $i3-wm.binding.right i3-wm.binding.right k
+set_from_resource $i3-wm.binding.up i3-wm.binding.up l
+set_from_resource $i3-wm.binding.down i3-wm.binding.down colon
 bindsym $mod+$i3-wm.binding.left focus left
 bindsym $mod+$i3-wm.binding.down focus down
 bindsym $mod+$i3-wm.binding.up focus up
@@ -213,11 +213,11 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-## Modify // Window Position // <><Shift> k j h l ##
-set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+h
-set_from_resource $i3-wm.binding.move_right i3-wm.binding.move_right Shift+l
-set_from_resource $i3-wm.binding.move_up i3-wm.binding.move_up Shift+k
-set_from_resource $i3-wm.binding.move_down i3-wm.binding.move_down Shift+j
+## Modify // Window Position // <><Shift> k j h l #################################### changed hjkl to jkl;
+set_from_resource $i3-wm.binding.move_left i3-wm.binding.move_left Shift+j
+set_from_resource $i3-wm.binding.move_right i3-wm.binding.move_right Shift+k
+set_from_resource $i3-wm.binding.move_up i3-wm.binding.move_up Shift+l
+set_from_resource $i3-wm.binding.move_down i3-wm.binding.move_down Shift+colon
 bindsym $mod+$i3-wm.binding.move_left move left
 bindsym $mod+$i3-wm.binding.move_down move down
 bindsym $mod+$i3-wm.binding.move_up move up
@@ -241,11 +241,11 @@ bindsym $mod+$i3-wm.binding.take_right move workspace to output right
 
 ## Modify // Vertical Window Orientation // <> v ##
 set_from_resource $i3-wm.binding.split_v i3-wm.binding.split_v v
-bindsym $mod+$i3-wm.binding.split_v split vertical
+bindsym $mod+$i3-wm.binding.split_v split horizontal
 
-## Modify // Horizontal Window Orientation // <> g ##
-set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h g
-bindsym $mod+$i3-wm.binding.split_h split horizontal
+## Modify // Horizontal Window Orientation // <> h ##
+set_from_resource $i3-wm.binding.split_h i3-wm.binding.split_h h
+bindsym $mod+$i3-wm.binding.split_h split vertical
 
 ## Modify // Toggle Window Orientation // <> Backspace ##
 set_from_resource $i3-wm.binding.orientation_toggle i3-wm.binding.orientation_toggle BackSpace
@@ -652,10 +652,18 @@ exec --no-startup-id $i3-wm.program.3
 
 
 ################################################################################
+
+# split in horizontal orientation
+#bindsym $mod+h split h
+
+# split in vertical orientation
+#bindsym $mod+v split v
+
 ### My execs
 # Work - force myhours, wire, thunderbird to Work workspace
 for_window [title="Signin - My Hours - Google Chrome"] move to workspace number "1: Work"
-exec google-chrome "https://app.myhours.com//#/signin"
+exec google-chrome "https://app.myhours.com//#/signin" "https://app.wire.com/"
+exec thunderbird
 
 # Browser - general browser workspace
 assign [class="Google-chrome" instance="google-chrome"] → number "2: Browser"
