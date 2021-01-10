@@ -653,15 +653,15 @@ exec --no-startup-id $i3-wm.program.3
 
 ################################################################################
 ### My execs
-# Work
+# Work - force myhours, wire, thunderbird to Work workspace
 for_window [title="Signin - My Hours - Google Chrome"] move to workspace number "1: Work"
 exec google-chrome "https://app.myhours.com//#/signin"
 
-# Browser
+# Browser - general browser workspace
 assign [class="Google-chrome" instance="google-chrome"] → number "2: Browser"
 exec google-chrome --new-window
 
-# Term
+# Term - create a base term in workspace 3, all other terms will start on current workspace
 assign [title="Term-Base"] → number "3: Term"
 exec terminator --title "Term-Base"
 
